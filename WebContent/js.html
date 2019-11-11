@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Javascript</title>
 </head>
 <body>
 	<input type="number" id="num1">X
 	<input type="number" id="num2">
 	<div id="div1"></div>
-	<button onclick="changeDiv()">¼öÁ¤</button>
+	<button onclick="changeDiv()">ìˆ˜ì •</button>
 	<script>
 		function changeDiv() {
 			var divObj = document.getElementById("div1");
@@ -23,17 +23,17 @@
 			}
 			document.getElementById("div1").innerHTML = str;
 		}
-		// ÀÚ¹Ù½ºÅ©¸³Æ®´Â µ¿Àû µ¥ÀÌÅÍÅ¸ÀÔÀÌ°í functionµµ º¯¼ö·Î »ïÀ»¼öÀÖ´Ù.(function±â¹İ Language)
+		// ìë°”ìŠ¤í¬ë¦½íŠ¸ëŠ” ë™ì  ë°ì´í„°íƒ€ì…ì´ê³  functionë„ ë³€ìˆ˜ë¡œ ì‚¼ì„ìˆ˜ìˆë‹¤.(functionê¸°ë°˜ Language)
 
 		var a = 1;
 		var str = '1';
 
 		//alert(a==str);
 		//alert(a===str);
-		// ÀÚ¹ÙÀÇ== : µ¥ÀÌÅÍÁÖ¼ÒÀÇ µ¿ÀÏºñ±³  ÀÚ¹Ù½ºÅ©¸³Æ®ÀÇ== : °ªÀÇ µ¿ÀÏºñ±³ (=== µ¥ÀÌÅÍÅ¸ÀÔ±îÁö ºñ±³)
+		// ìë°”ì˜== : ë°ì´í„°ì£¼ì†Œì˜ ë™ì¼ë¹„êµ  ìë°”ìŠ¤í¬ë¦½íŠ¸ì˜== : ê°’ì˜ ë™ì¼ë¹„êµ (=== ë°ì´í„°íƒ€ì…ê¹Œì§€ ë¹„êµ)
 
-		//alert(a!=str); 1°ú 1ÀÌ ´Ù¸¥°¡
-		//alert(a!==str); 1°ú '1'ÀÌ ´Ù¸¥°¡
+		//alert(a!=str); 1ê³¼ 1ì´ ë‹¤ë¥¸ê°€
+		//alert(a!==str); 1ê³¼ '1'ì´ ë‹¤ë¥¸ê°€
 		/*
 		var arr = [1,2,3];
 		arr.push(4);

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="number" id="num">
+<button onclick="checkNum()">야구겜</button>
+<div id="rDiv"></div>
+<script>
+	var rNum = Math.floor(Math.random()*9)+1;
+	var numObj = document.getElementById("num");
+	function checkNum(){
+		var result = 'OUT';
+		if(rNum==numObj.value){
+			result = 'STRIKE';
+		}
+		document.getElementById("rDiv").innerHTML = result;
+	}
+
+
+</script>
+</body>
+</html>
