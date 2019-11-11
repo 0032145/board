@@ -6,9 +6,8 @@
 </head>
 <body>
 	<input type="number" id="num">
-	<button onclick="checkNum()">야구겜</button>
+	<button onclick="checkNum()">야구게임</button>
 	<div id="rDiv"></div>
-	<div id="rDiv2"></div>
 	<script>
 	var rNums = [];
 	while(rNums.length!=3){
@@ -24,22 +23,18 @@
 			for(int j=0;j<=nums.length;j++){
 				if(rNums[i]==nums[j]){
 					if(i==j){
-						cnts
+						cnts[0]++;
+					}else {
+						cnts[1]++;
 					}
 				}
 			}
 		}
 	}
-		var result = 'OUT';
-		if(rNum==numObj){
-			result = 'STRIKE';
+		var out = 3-cnt[0]-cnt[1];
+		var result = cnt[0] + 'Strike,' + cnt[1] + 'Ball,' + out + 'Out';
 		document.getElementById("rDiv").innerHTML = result;
-		document.getElementById("rDiv2").innerHTML = numObj;
 	}
-
-
 </script>
-
-
 </body>
 </html>

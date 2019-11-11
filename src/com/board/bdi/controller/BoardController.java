@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import com.board.bdi.service.BoardService;
 import com.board.bdi.service.impl.BoardServiceImpl;
+import com.google.gson.Gson;
 
 public class BoardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,7 +26,10 @@ public class BoardController extends HttpServlet {
 		String path = "/views/board/list";
 		if("list".equals(cmd)) {
 			List<Map<String,String>> list = bs.getBoardList(board);
-			request.setAttribute("list", list);
+			Gson gson = new Gson();
+			response.setContentType("text/html);charset=utf-8");
+			response.getWriter().println(gson.toJson(list));
+			return;
 		} else if("view".equals(cmd)) {
 			path = "/views/board/view";
 			board.put("biNum",request.getParameter("biNum"));

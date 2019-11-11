@@ -18,24 +18,36 @@
 			<th>작성일</th>
 			<th>작성시간</th>
 		</tr>
-		<c:if test="${empty list}">
-			<tr>
-				<td colspan="5">게시물이 없습니다.</td>
-			</tr>
-		</c:if>
-		<c:forEach var="board" items="${list}">
-			<tr>
-				<td>${board.biNum}</td>
-				<td><a href="/board/view?biNum=${board.biNum}">${board.biTitle}</a></td>
-				<td>${board.uiId}</td>
-				<td>${board.credat}</td>
-				<td>${board.cretim}</td>
-			</tr>
-		</c:forEach>
+		<tbody>
+
+		</tbody>
 	</table>
 	<button onclick="goPage('/views/board/insert')">글쓰기</button>
 	<button onclick="goPage('/users/list')">회원목록보기</button>
 	<script>
+		window.onload = function() {
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', '/board/list');
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == 4) {
+					if (xhr.status == 200) {
+						var list = JSON.parse(xhr.responseText);
+						var html = '';
+						for (var i = 0; i < list.length; i++) {
+							html += '<tr>';
+							html += '<td>' + list[i].biNum + '</td>';
+							html += '<td>' + list[i].biTitle + '</td>';
+							html += '<td>' + list[i].uiId + '</td>';
+							html += '<td>' + list[i].credat + '</td>';
+							html += '<td>' + list[i].cretim + '</td>';
+							html += '</tr>';
+						}
+						document.getElementById('rDiv').innerHTML = html;
+					}
+				}
+			}
+			xhr.send();
+		}
 		function goPage(url) {
 			location.href = url;
 		}
